@@ -1,44 +1,51 @@
 const comprarProductos = () => {
-    let producto = ' ';
-    let cantidad = 0;
-    let precio = 0;
     let totalCompra = 0;
     let seguirComprando = false;
+    const carrito = []
 
 do {
-    producto = prompt('¿Queres comprar buzo, pantalon o ambos?');
-    cantidad = parseInt(prompt('¿Cuantos Queres Comprar?'));
-    console.log('cantidad: '+cantidad);
-    let cantidadValidada = validarCantidad(cantidad);
-    console.log('cantidadValidada: '+cantidadValidada);
-    switch (producto) {
+    producto = {
+        nombre: prompt('¿Queres comprar buzo, pantalon o ambos?'),
+        cantidad: validarCantidad(parseInt(prompt('¿Cuantos Queres Comprar?'))),
+        precio: 0
+    }
+
+    switch (producto.nombre) {
         case 'buzo':
-            precio = 4000;
+            producto.precio = 4000;
             break;
         case 'pantalon':
-            precio = 5000;
+            producto.precio = 5000;
             break;
         case 'ambos':
-            precio = 9000;
+            producto.precio = 9000;
             break;
         default:
             alert('algunos de los datos ingresados no son correctos')
-            precio = 0;
-            cantidadValidada = 0;
+            producto.precio = 0;
+            cantidad = 0;
     }
-
-    totalCompra += precio * cantidadValidada
-
+    if(producto.precio > 0){
+        carrito.push(producto);
+    }
+    totalCompra += producto.precio * producto.cantidad
     seguirComprando = confirm('¿Queres agregar otro producto?');
 } while (seguirComprando);
-
 let totalConDescuento = aplicarDescuento(totalCompra);
-console.log(totalConDescuento);
-console.log(totalCompra);
+
 calcularEnvio(totalConDescuento);
 totalConDescuento = pagarCuotas(totalConDescuento);
-
+let productosComprados = '';
+// Ordenamos el carrito por precio de mayor a menor
+carrito.sort((a, b) => (a.precio < b.precio) ? 1 : -1)
+//Recorremos el carrito para mostrar los productos comprados en un alert
+carrito.forEach(function(prod){
+    productosComprados += ' \n' + prod.cantidad + " unidades de " + prod.nombre;
+});
+alert("Compraste los productos: " + productosComprados);
 };
+
+
 const aplicarDescuento = (totalCompra) =>{
   if(totalCompra >= 7000) {
     alert('Por tu compra superior a $ 7000 tenes un descuento del 20%');
@@ -88,14 +95,10 @@ const calcularEnvio = (totalCompra) => {
         alert ('El envio cuesta $ 900');
     }  
 }
+
+
 comprarProductos();
 
 
 
 
-
-
-
-
-
-const 
