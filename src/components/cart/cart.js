@@ -31,7 +31,7 @@ const pintarProductoCarrito = (producto) => {
     div.innerHTML =`
         <p>${producto.nombre}</p>
         <p>Precio: $${producto.precio}</p>
-        <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
+        <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad} Kg.</p>
         <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
     `
     contenedor.appendChild(div);
@@ -71,7 +71,7 @@ const actualizarCarrito = (carrito) => {
         div.innerHTML =`
             <p>${producto.nombre}</p>
             <p>Precio:$${producto.precio}</p>
-            <p id=cantidad${producto.id}>Cantidad x Kg: ${producto.cantidad}</p>
+            <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad} Kg.</p>
             <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
         `
         contenedor.appendChild(div);
