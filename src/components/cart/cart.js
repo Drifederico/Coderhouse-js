@@ -78,6 +78,21 @@ const actualizarCarrito = (carrito) => {
     });
 };
 
+const vaciarCarrito = () => {
+    if (carrito.length == 0) {
+        swal("Su carrito ya se encuentra vacio");
+        return;
+    }
+    carrito = [];
+    const contenedor = document.getElementById('carrito-contenedor');
+    contenedor.innerHTML = "";
+    const precio = document.getElementById('precioTotal');
+    precio.textContent = 0
+    const contadorCarrito = document.getElementById('contador-carrito');
+    contadorCarrito.textContent = 0
+    swal("Los productos han sido eliminados con exito");
+};
+
 const guardarCarritoStorage = (carrito) => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 };
