@@ -1,7 +1,7 @@
-const pintarProductos = () => {
+const  pintarProductos = async () => {
   const contenedor = document.getElementById("producto-contenedor");
-
-  productos.forEach(producto => {
+  const carnes = await productos()
+  carnes.forEach(producto => { 
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML += `<div class="card-image">

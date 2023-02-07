@@ -1,0 +1,50 @@
+
+[{
+    "id": 1,
+    "nombre": "Entraña",
+    "tipo": "entraña",
+    "precio": 1900,
+    "img": "/public/images/entrana.jpg",
+    "cantidad": 1
+},
+{
+    "id": 2,
+    "nombre": "Ojo de Bife",
+    "tipo": "Ojo de bife",
+    "precio": 1950,
+    "img": "/public/images/ojodebife.jpg",
+    "cantidad": 1
+},
+{
+    "id": 3,
+    "nombre": "T-Bone",
+    "tipo": "T-Bone",
+    "precio": 2100,
+    "img": "/public/images/t-bone.webp",
+    "cantidad": 1
+},
+{
+    "id": 4,
+    "nombre": "Tomahawk",
+    "tipo": "Tomahawk",
+    "precio": 2300,
+    "img": "/public/images/tomahawk.webp",
+    "cantidad": 1
+},
+{
+    "id": 5,
+    "nombre": "Bife de Chorizo",
+    "tipo": "Bife de Chorizo",
+    "precio": 2000,
+    "img": "/public/images/bifedechorizo.jpeg",
+    "cantidad": 1
+},
+{
+    "id": 6,
+    "nombre": "Colita de Cuadril",
+    "tipo": "Colita de Cuadril",
+    "precio": 2000,
+    "img": "/public/images/colitadecuadril.jpg",
+    "cantidad": 1
+}
+]

@@ -8,11 +8,11 @@ productoContenedor.addEventListener('click', (e) => {
     }
 });
 
-const validarProductoEnCarrito = (productoId) => {
+const validarProductoEnCarrito = async (productoId) => {
     const productoRepetido = carrito.find(producto => producto.id == productoId);
 
     if (!productoRepetido) {
-        const producto = productos.find(producto => producto.id == productoId);
+        const producto = (await productos()).find(producto => producto.id == productoId);
         carrito.push(producto);
         pintarProductoCarrito(producto);
         actualizarTotalesCarrito(carrito);
@@ -79,7 +79,7 @@ const actualizarCarrito = (carrito) => {
 };
 
 const vaciarCarrito = () => {
-    if (carrito.length == 0) {
+    if (carrito.length === 0) {
         swal("Su carrito ya se encuentra vacio");
         return;
     }
